@@ -224,3 +224,114 @@ footer {
   text-align: center;
   padding: 2rem 0;
 }
+
+/* ======== SMOOTH NAVBAR ANIMATION ======== */
+html {
+  scroll-behavior: smooth; /* 🌊 Scroll halus ke anchor */
+}
+
+/* Efek buka tutup menu lebih lembut */
+@media (max-width: 768px) {
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--light-text);
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    border-top: 1px solid #eee;
+  }
+
+  header nav.active ul {
+    max-height: 500px;
+    opacity: 1;
+    padding: 10px 0;
+  }
+
+  header nav ul li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  header nav.active ul li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Burger icon smooth transform */
+  .menu-toggle.active i {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+}
+
+
+/* ======== RESPONSIVE NAVBAR ======== */
+
+/* Sembunyikan menu toggle di desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Saat layar kecil (HP/Tablet) */
+@media (max-width: 768px) {
+  header nav {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--light-text);
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    border-top: 1px solid #eee;
+  }
+
+  /* Saat menu aktif */
+  header nav.active ul {
+    max-height: 500px; /* cukup besar agar seluruh menu terlihat */
+    padding: 10px 0;
+  }
+
+  /* Tambahkan animasi muncul item satu per satu */
+  header nav ul li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  header nav.active ul li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Animasikan ikon burger jadi "X" */
+  .menu-toggle.active i {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Hilangkan burger di desktop */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
