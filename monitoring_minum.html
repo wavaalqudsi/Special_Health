@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -17,7 +17,6 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        
       }
 
       body {
@@ -37,7 +36,6 @@
         justify-content: space-between;
         align-items: center;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-       
       }
 
       nav .logo {
@@ -51,14 +49,13 @@
         display: flex;
         list-style: none;
         gap: 1.2rem;
-      
       }
 
       nav ul li a {
         color: white;
         text-decoration: none;
         transition: 0.3s;
-        font-weight: 700 ;
+        font-weight: 700;
       }
 
       nav ul li a:hover {
@@ -232,9 +229,13 @@
       <ul>
         <li><a href="index.html">Beranda</a></li>
         <li><a href="monitoring_tidur.html">Monitoring Tidur</a></li>
-        <li><a href="kalkulator.html">Kalkulator Gizi</a></li>
+        <li><a href="macro-kalkulator.html">Kalkulator Gizi</a></li>
         <li><a href="BMI.html">Kalkulator BMI</a></li>
-        <li><a href="monitoring_minum.html" style="color: var(--color-third)">Monitoring Air</a></li>
+        <li>
+          <a href="monitoring_minum.html" style="color: var(--color-third)"
+            >Monitoring Air</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -262,7 +263,14 @@
           <div class="water" id="water"></div>
         </div>
         <p id="persen">0%</p>
-        <input type="range" min="0" max="2000" step="50" value="0" id="slider" />
+        <input
+          type="range"
+          min="0"
+          max="2000"
+          step="50"
+          value="0"
+          id="slider"
+        />
       </aside>
     </main>
 
@@ -272,34 +280,58 @@
         <h2>Artikel Kesehatan Terbaru</h2>
         <div class="article-grid">
           <article class="article-card">
-            <img src="https://rsum.bandaacehkota.go.id/wp-content/uploads/2025/04/jalan_kaki.webp" alt="Gambar artikel 1" />
+            <img
+              src="https://rsum.bandaacehkota.go.id/wp-content/uploads/2025/04/jalan_kaki.webp"
+              alt="Gambar artikel 1"
+            />
             <div class="article-content">
               <h3>5 Manfaat Jalan Kaki Setiap Pagi untuk Jantung</h3>
-              <p>Jalan kaki adalah olahraga sederhana namun memiliki dampak luar biasa bagi kesehatan kardiovaskular...</p>
+              <p>
+                Jalan kaki adalah olahraga sederhana namun memiliki dampak luar
+                biasa bagi kesehatan kardiovaskular...
+              </p>
               <a href="#">Baca Selengkapnya →</a>
             </div>
           </article>
           <article class="article-card">
-            <img src="https://image.idntimes.com/post/20220113/10-ide-menu-sarapan-enak-tanpa-nasi-sarapan-yang-tidak-membosankan-9cde86371d7fc78c91ae80a6ffab250e-c9f29f91a352064bef58fb8fb9b5517b.jpg" alt="Gambar artikel 2" />
+            <img
+              src="https://image.idntimes.com/post/20220113/10-ide-menu-sarapan-enak-tanpa-nasi-sarapan-yang-tidak-membosankan-9cde86371d7fc78c91ae80a6ffab250e-c9f29f91a352064bef58fb8fb9b5517b.jpg"
+              alt="Gambar artikel 2"
+            />
             <div class="article-content">
               <h3>Pentingnya Sarapan Sehat Sebelum Aktivitas</h3>
-              <p>Jangan lewatkan sarapan! Makanan di pagi hari memberikan energi yang Anda butuhkan untuk...</p>
+              <p>
+                Jangan lewatkan sarapan! Makanan di pagi hari memberikan energi
+                yang Anda butuhkan untuk...
+              </p>
               <a href="#">Baca Selengkapnya →</a>
             </div>
           </article>
           <article class="article-card">
-            <img src="https://i0.wp.com/holisticare.co.id/wp-content/uploads/2017/09/Manajemen-Stress-Orang-Sukses-1.jpg?fit=800%2C350&ssl=1" alt="Gambar artikel 3" />
+            <img
+              src="https://i0.wp.com/holisticare.co.id/wp-content/uploads/2017/09/Manajemen-Stress-Orang-Sukses-1.jpg?fit=800%2C350&ssl=1"
+              alt="Gambar artikel 3"
+            />
             <div class="article-content">
               <h3>Cara Mengelola Stres dengan Teknik Pernapasan</h3>
-              <p>Stres dapat memengaruhi kesehatan fisik dan mental. Pelajari teknik pernapasan sederhana untuk...</p>
+              <p>
+                Stres dapat memengaruhi kesehatan fisik dan mental. Pelajari
+                teknik pernapasan sederhana untuk...
+              </p>
               <a href="#">Baca Selengkapnya →</a>
             </div>
           </article>
           <article class="article-card">
-            <img src="https://pdaminfo.pdampintar.id/wp-content/uploads/2022/08/Air-Minum-Dalam-Kemasan.jpg" alt="Gambar artikel 3" />
+            <img
+              src="https://pdaminfo.pdampintar.id/wp-content/uploads/2022/08/Air-Minum-Dalam-Kemasan.jpg"
+              alt="Gambar artikel 3"
+            />
             <div class="article-content">
               <h3>Minum Air yang Cukup Setiap Hari</h3>
-              <p>Minum air yang cukup sangat penting untuk menjaga kesehatan tubuh. Pastikan Anda memenuhi kebutuhan cairan harian Anda!</p>
+              <p>
+                Minum air yang cukup sangat penting untuk menjaga kesehatan
+                tubuh. Pastikan Anda memenuhi kebutuhan cairan harian Anda!
+              </p>
               <a href="#">Baca Selengkapnya →</a>
             </div>
           </article>

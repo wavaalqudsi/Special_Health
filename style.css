@@ -74,9 +74,9 @@ header nav ul li a:hover {
 
 /* 2. Hero Banner */
 .hero {
-  background: linear-gradient(rgba(45, 139, 87, 0.7), rgba(60, 179, 113, 0.7)),
-    url("img/run.jpg")
-      no-repeat center center/cover;
+  background:
+    linear-gradient(rgba(45, 139, 87, 0.7), rgba(60, 179, 113, 0.7)),
+    url("img/run.jpg") no-repeat center center/cover;
   height: 60vh;
   display: flex;
   justify-content: center;
@@ -140,7 +140,9 @@ h2 {
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
@@ -186,7 +188,9 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .article-card:hover {
@@ -268,7 +272,6 @@ html {
     transition: transform 0.3s ease;
   }
 }
-
 
 /* ======== RESPONSIVE NAVBAR ======== */
 
