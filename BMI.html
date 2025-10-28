@@ -7,17 +7,15 @@
     <style>
       /* ====== ROOT COLORS ====== */
       :root {
-       --primary-green: #2d8b57; /* SeaGreen */
-        --secondary-green: #3cb371; /* MediumSeaGreen */
-        --light-green-bg: #f0fff0; /* Honeydew */
-        --dark-text: #333333;
+        --primary-green: #2d8b57;
+        --secondary-green: #3cb371;
+        --light-green-bg: #f0fff0;
+        --dark-text: #333;
         --light-text: #ffffff;
         --grey-bg: #f4f4f4;
         --color-background: #f0fff0;
-        --color-text-dark: #333333;
         --color-primary: #2d8b57;
-        --color-success: #3cb371;
-
+        --color-secondary: #3cb371;
         --radius-lg: 16px;
         --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.15);
         --transition-fast: all 0.3s ease;
@@ -27,18 +25,12 @@
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(135, 135, 135, 0.7)),
-    url("img/BMI.jpg")
-      no-repeat center center/cover;
-        color: var(--color-text-dark);
+        background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(180, 180, 180, 0.5)),
+          url("img/BMI.jpg") no-repeat center center/cover;
+        color: var(--dark-text);
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-      }
-
-      main {
-        flex: 1;
-        padding: 20px;
       }
 
       h1 {
@@ -50,35 +42,29 @@
       }
 
       h2 {
-        color: var(--color-accent);
-        font-size: 1.1rem;
-        font-weight: 500;
+        color: var(--color-primary);
         margin-bottom: 25px;
       }
 
       h3 {
         color: var(--color-primary);
-        margin-top: 0;
         margin-bottom: 15px;
         font-size: 1.4rem;
       }
 
       /* ====== NAVBAR ====== */
       .navbar {
-        background: linear-gradient(
-          90deg,
-          var(--color-primary)
-        );
+        background: var(--color-primary);
         color: white;
         padding: 0.8rem 1.5rem;
-        box-shadow: var(--shadow-soft);
+        box-shadow: var(--shadow-md);
         position: sticky;
         top: 0;
         z-index: 1000;
       }
 
       .nav-container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: auto;
         display: flex;
         align-items: center;
@@ -91,11 +77,6 @@
         color: white;
         text-decoration: none;
         letter-spacing: 1px;
-        transition: 0.3s ease;
-      }
-
-      .nav-logo a:hover {
-        color: var(--color-light);
       }
 
       .nav-links {
@@ -105,11 +86,10 @@
 
       .nav-links a {
         color: white;
-        font-weight: 500;
         text-decoration: none;
         padding: 0.5rem 0.8rem;
         border-radius: 0.5rem;
-        transition: all 0.3s ease;
+        transition: var(--transition-fast);
       }
 
       .nav-links a:hover {
@@ -117,38 +97,34 @@
         transform: translateY(-2px);
       }
 
-      /* Tombol menu untuk mobile */
-      .nav-toggle {
-        display: none;
-        font-size: 1.8rem;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        transition: transform 0.3s ease;
+      /* ====== MAIN CONTENT ====== */
+      main {
+        flex: 1;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      .nav-toggle:hover {
-        transform: scale(1.1);
-      }  
-    
-      /* ====== CARD ====== */
-      .container {
-        max-width: 480px;
+      .bmi-wrapper {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
         width: 100%;
-        margin: auto;
-        text-align: center;
+        max-width: 1200px;
       }
 
       .card {
+        flex: 1;
+        min-width: 340px;
+        max-width: 500px;
         padding: 25px;
         border-radius: var(--radius-lg);
-        background: #ffffff;
-        margin: 20px 0;
+        background: #ffffffcc;
         box-shadow: var(--shadow-md);
         text-align: left;
         transition: var(--transition-fast);
-        transform: translateY(0);
       }
 
       .card:hover {
@@ -156,7 +132,6 @@
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
       }
 
-      /* ====== INPUT ====== */
       label {
         display: block;
         margin-top: 15px;
@@ -168,7 +143,7 @@
         padding: 10px;
         margin-top: 8px;
         border-radius: 10px;
-        border: 2px solid var(--color-secondary);
+        border: 2px solid var(--secondary-green);
         font-size: 1rem;
         transition: var(--transition-fast);
       }
@@ -179,74 +154,25 @@
         box-shadow: 0 0 6px var(--color-primary);
       }
 
-      /* ====== BUTTON ====== */
       button {
         width: 100%;
         margin-top: 25px;
         padding: 12px 15px;
-        background: linear-gradient(
-          135deg,
-          var(--color-primary),
-          var(--color-secondary)
-        );
+        background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
         color: white;
         border: none;
         border-radius: 10px;
         cursor: pointer;
         font-size: 1.1rem;
         font-weight: bold;
-        box-shadow: 0 4px 10px rgba(140, 185, 127, 0.5);
         transition: var(--transition-fast);
       }
 
       button:hover {
-        background: linear-gradient(
-          135deg,
-          var(--color-secondary),
-          var(--color-primary)
-        );
         transform: scale(1.03);
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
       }
 
-      /* ====== BMI BAR ====== */
-      .bmi-bar {
-        width: 100%;
-        height: 25px;
-        background: #e5e7eb;
-        border-radius: 12px;
-        overflow: hidden;
-        margin: 20px 0;
-        position: relative;
-      }
-
-      #barIndicator {
-        height: 100%;
-        width: 0;
-        transition: width 0.5s ease-out;
-        border-radius: 0 12px 12px 0;
-      }
-
-      .bmi-bar::before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: linear-gradient(
-          to right,
-          var(--color-underweight) 0%,
-          var(--color-underweight) 26.5%,
-          var(--color-normal) 26.5%,
-          var(--color-normal) 42.5%,
-          var(--color-overweight) 42.5%,
-          var(--color-overweight) 57.5%,
-          var(--color-obese) 57.5%,
-          var(--color-obese) 100%
-        );
-        opacity: 0.25;
-      }
-
-      /* ====== RESULT & TIPS ====== */
       .result-box {
         text-align: center;
         font-size: 1.2rem;
@@ -259,6 +185,21 @@
         margin-top: 5px;
       }
 
+      .bmi-bar {
+        width: 100%;
+        height: 25px;
+        background: #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 20px 0;
+      }
+
+      #barIndicator {
+        height: 100%;
+        width: 0;
+        transition: width 0.5s ease-out;
+      }
+
       .tips {
         margin-top: 15px;
         font-size: 1rem;
@@ -269,18 +210,74 @@
         background-color: #f9fcff;
       }
 
-      /* Footer */
+      /* ====== ARTIKEL SECTION ====== */
+      #artikel {
+        padding: 40px 20px;
+        background-color: #f8fafc;
+      }
+
+      #artikel .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      #artikel h2 {
+        color: var(--color-primary);
+        margin-bottom: 20px;
+      }
+
+      .article-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .article-card {
+        background-color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .article-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .article-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .article-content {
+        padding: 15px;
+      }
+
+      .article-content h3 {
+        color: var(--color-primary);
+        margin-bottom: 8px;
+      }
+
+      .article-content a {
+        text-decoration: none;
+        color: var(--color-secondary);
+        font-weight: bold;
+      }
+
       footer {
-        background-color: var(--primary-green);
+        background-color: var(--color-primary);
         color: white;
         text-align: center;
         padding: 20px 0;
-        margin-top: 50px;
       }
 
-      footer p {
-        margin: 0;
-        font-size: 0.95rem;
+      @media (max-width: 768px) {
+        .bmi-wrapper {
+          flex-direction: column;
+          align-items: center;
+        }
       }
     </style>
   </head>
@@ -289,29 +286,24 @@
     <!-- ====== NAVBAR ====== -->
     <header class="navbar">
       <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html">Special Health</a>
-        </div>
-
-        <nav class="nav-links" id="navMenu">
-          <a href="monitoring-tidur.html">Monitoring Tidur</a>
-          <a href="kalkulator-gizi.html">Kalkulator Gizi</a>
-          <a href="kalkulator-bmi.html">BMI</a>
-          <a href="monitoring-air.html">Monitoring Air Minum</a>
+        <div class="nav-logo"><a href="index.html">Special Health</a></div>
+        <nav class="nav-links">
+          <a href="index.html">Beranda</a>
+          <a href="monitoring_tidur.html">Monitoring Tidur</a>
+          <a href="kalkulator.html">Kalkulator Gizi</a>
+          <a href="BMI.html">BMI</a>
+          <a href="monitoring_minum.html">Monitoring Air</a>
         </nav>
-
-        <button class="nav-toggle" id="navToggle" aria-label="Menu">
-          &#9776;
-        </button>
       </div>
     </header>
 
     <!-- ====== MAIN CONTENT ====== -->
     <main>
-      <div class="container">
-        <h1>Kalkulator BMI</h1>
-        <h2>Aplikasi Kesehatan & Kebugaran</h2>
+      <h1>Kalkulator BMI</h1>
+      <h2>Aplikasi Kesehatan & Kebugaran</h2>
 
+      <div class="bmi-wrapper">
+        <!-- Input -->
         <div class="card">
           <h3>Input Data Diri</h3>
           <label for="tinggi">Tinggi (cm)</label>
@@ -323,16 +315,11 @@
           <button onclick="hitungBMI()">Hitung BMI</button>
         </div>
 
+        <!-- Hasil -->
         <div class="card">
           <h3>Hasil Perhitungan</h3>
           <div class="result-box" id="nilaiBMI">BMI: -</div>
-          <div
-            class="result-box"
-            id="kategoriBMI"
-            style="color: var(--color-text-dark)"
-          >
-            Kategori: -
-          </div>
+          <div class="result-box" id="kategoriBMI">Kategori: -</div>
 
           <div class="bmi-bar">
             <div id="barIndicator"></div>
@@ -346,15 +333,47 @@
       </div>
     </main>
 
+    <!-- ====== ARTIKEL KESEHATAN ====== -->
+    <section id="artikel" class="articles">
+      <div class="container">
+        <h2>Artikel Kesehatan Terbaru</h2>
+        <div class="article-grid">
+          <article class="article-card">
+            <img src="https://unair.ac.id/wp-content/uploads/2023/11/10a-1.png" />
+            <div class="article-content">
+              <h3>Pola Makan Seimbang</h3>
+              <p>Pola makan seimbang sangat penting untuk menjaga kesehatan tubuh. Pastikan untuk mengonsumsi berbagai jenis makanan yang mengandung nutrisi yang dibutuhkan tubuh.</p>
+              <a href="#">Baca Selengkapnya →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1664185466/attached_image/cara-menghitung-berat-badan-ideal-wanita-dan-langkah-memperolehnya.jpg" />
+            <div class="article-content">
+              <h3>Pantau Tinggi dan Berat Badan Secara Berkala</h3>
+              <p>Untuk menjaga kesehatan, penting untuk memantau tinggi dan berat badan secara berkala. Hal ini membantu dalam mengidentifikasi perubahan yang mungkin memerlukan perhatian lebih lanjut.</p>
+              <a href="#">Baca Selengkapnya →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="https://columbiaasia.co.id/wp-content/uploads/2024/03/rsca-article-obesitas-scaled.jpg" />
+            <div class="article-content">
+              <h3>Bahaya Obesitas</h3>
+              <p>Obesitas dapat meningkatkan risiko berbagai penyakit, termasuk diabetes, penyakit jantung, dan tekanan darah tinggi. Penting untuk menjaga berat badan yang sehat melalui pola makan seimbang dan olahraga teratur.</p>
+              <a href="#">Baca Selengkapnya →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ====== FOOTER ====== -->
-    <footer>
-      <p>&copy; 2025 Special Health. Dibuat untuk gaya hidup yang lebih sehat.</p>
-    </footer>
-    <!-- ====== SCRIPT ====== -->
+    <footer>© 2025 Special Health. Dibuat untuk gaya hidup yang lebih sehat.</footer>
+
     <script>
       function hitungBMI() {
-        const tinggi =
-          parseFloat(document.getElementById("tinggi").value) / 100;
+        const tinggi = parseFloat(document.getElementById("tinggi").value) / 100;
         const berat = parseFloat(document.getElementById("berat").value);
 
         if (isNaN(tinggi) || isNaN(berat) || tinggi <= 0 || berat <= 0) {
@@ -370,32 +389,23 @@
         if (bmi < 18.5) {
           kategori = "Kekurangan berat badan";
           tips = "Perbanyak asupan bergizi dan kalori sehat.";
-          barColor = getComputedStyle(
-            document.documentElement
-          ).getPropertyValue("--color-underweight");
+          barColor = "#4b9cd3";
         } else if (bmi < 25) {
           kategori = "Normal";
           tips = "Pertahankan pola makan & olahraga teratur!";
-          barColor = getComputedStyle(
-            document.documentElement
-          ).getPropertyValue("--color-normal");
+          barColor = "#3cb371";
         } else if (bmi < 30) {
           kategori = "Kelebihan berat badan";
           tips = "Kurangi kalori & tingkatkan aktivitas fisik.";
-          barColor = getComputedStyle(
-            document.documentElement
-          ).getPropertyValue("--color-overweight");
+          barColor = "#f1c40f";
         } else {
           kategori = "Obesitas";
           tips = "Konsultasikan ke profesional kesehatan.";
-          barColor = getComputedStyle(
-            document.documentElement
-          ).getPropertyValue("--color-obese");
+          barColor = "#e74c3c";
         }
 
         document.getElementById("nilaiBMI").innerText = "BMI: " + bmi;
-        document.getElementById("kategoriBMI").innerText =
-          "Kategori: " + kategori;
+        document.getElementById("kategoriBMI").innerText = "Kategori: " + kategori;
         document.getElementById("kategoriBMI").style.color = barColor;
         document.getElementById("tips").innerText = tips;
 
@@ -405,8 +415,6 @@
         bar.style.width = barWidth + "%";
         bar.style.background = barColor;
       }
-
-      
     </script>
   </body>
 </html>

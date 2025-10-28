@@ -28,7 +28,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: 1600px;
         margin: 0 auto;
         padding: 30px 20px;
       }
@@ -65,7 +65,7 @@
   }
 
   .nav-container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -241,6 +241,7 @@
       /* Artikel */
       .articles {
         background-color: white;
+        text-align: center;
         margin-top: 50px;
         padding: 40px 20px;
         border-radius: 15px;
@@ -313,14 +314,15 @@
     <header class="navbar">
   <div class="nav-container">
     <div class="nav-logo">
-      <a href="index.html">🌿 HealthTrack</a>
+      <a href="/special_health/index.html">Special Health</a>
     </div>
 
     <nav class="nav-links" id="navMenu">
-      <a href="monitoring-tidur.html">Monitoring Tidur</a>
-      <a href="kalkulator-gizi.html">Kalkulator Gizi</a>
-      <a href="kalkulator-bmi.html">BMI</a>
-      <a href="monitoring-air.html">Monitoring Air Minum</a>
+      <a href="index.html">Beranda</a>
+      <a href="monitoring_tidur.html">Monitoring Tidur</a>
+      <a href="kalkulator.html">Kalkulator Gizi</a>
+      <a href="BMI.html">BMI</a>
+      <a href="monitoring_minum.html">Monitoring Air Minum</a>
     </nav>
 
     <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
@@ -329,7 +331,7 @@
 
     <div class="container">
       <div class="card">
-        <h2>🛌 Monitoring Tidur</h2>
+        <h2>Monitoring Tidur</h2>
 
         <div class="input-group">
           <label for="tidur">Jam Tidur:</label>
@@ -341,7 +343,7 @@
           <input type="time" id="bangun" />
         </div>
 
-        <button onclick="simpanData()">💾 Simpan Data Tidur</button>
+        <button onclick="simpanData()">Simpan Data Tidur</button>
 
         <h3>Riwayat Tidur</h3>
         <table id="tabelRiwayat">
@@ -360,29 +362,29 @@
 
     <section id="artikel" class="articles">
       <div class="container">
-        <h2>📰 Artikel Kesehatan Terbaru</h2>
+        <h2>Artikel Kesehatan Terbaru</h2>
         <div class="article-grid">
           <article class="article-card">
-            <img src="https://placehold.co/600x400/2D8B57/FFFFFF?text=Info+Sehat" alt="Gambar artikel 1" />
+            <img src="https://tribratanews.polri.go.id/web/image/blog.post/56550/image" alt="Gambar artikel 1" />
             <div class="article-content">
-              <h3>5 Manfaat Jalan Kaki Setiap Pagi untuk Jantung</h3>
-              <p>Jalan kaki adalah olahraga sederhana namun memiliki dampak luar biasa bagi kesehatan kardiovaskular...</p>
+              <h3>Manfaat tidur yang cukup</h3>
+              <p>Tidur yang cukup sangat penting untuk kesehatan fisik dan mental. Beberapa manfaatnya antara lain...</p>
               <a href="#">Baca Selengkapnya →</a>
             </div>
           </article>
           <article class="article-card">
-            <img src="https://placehold.co/600x400/2D8B57/FFFFFF?text=Gizi" alt="Gambar artikel 2" />
+            <img src="https://d1bpj0tv6vfxyp.cloudfront.net/articles/fb1c2fb7-d5be-4a19-ae85-37b5e8f6a15d_article_image_url.webp" alt="Gambar artikel 2" />
             <div class="article-content">
-              <h3>Pentingnya Sarapan Sehat Sebelum Aktivitas</h3>
-              <p>Jangan lewatkan sarapan! Makanan di pagi hari memberikan energi yang Anda butuhkan untuk...</p>
+              <h3>Waktu tidur yang ideal</h3>
+              <p>Waktu tidur yang ideal bervariasi untuk setiap orang, tetapi umumnya, orang dewasa membutuhkan 7-9 jam tidur per malam. Tidur yang cukup membantu memperbaiki suasana hati, meningkatkan konsentrasi, dan mendukung kesehatan secara keseluruhan.</p>
               <a href="#">Baca Selengkapnya →</a>
             </div>
           </article>
           <article class="article-card">
-            <img src="https://placehold.co/600x400/2D8B57/FFFFFF?text=Tips" alt="Gambar artikel 3" />
+            <img src="https://d1bpj0tv6vfxyp.cloudfront.net/articles/333342_25-11-2020_11-49-50.jpeg" alt="Gambar artikel 3" />
             <div class="article-content">
-              <h3>Cara Mengelola Stres dengan Teknik Pernapasan</h3>
-              <p>Stres dapat memengaruhi kesehatan fisik dan mental. Pelajari teknik pernapasan sederhana untuk...</p>
+              <h3>Tips tidak begadang</h3>
+              <p>Untuk menghindari begadang, cobalah untuk menetapkan rutinitas tidur yang konsisten, hindari kafein dan layar gadget sebelum tidur, serta ciptakan lingkungan tidur yang nyaman.</p>
               <a href="#">Baca Selengkapnya →</a>
             </div>
           </article>
