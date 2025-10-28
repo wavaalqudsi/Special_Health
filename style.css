@@ -284,6 +284,10 @@ html {
     flex-wrap: wrap;
   }
 
+  .hero {
+    height: 100vh;
+  }
+
   .menu-toggle {
     display: block;
     font-size: 1.8rem;
