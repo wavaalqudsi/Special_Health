@@ -83,6 +83,7 @@
         display: flex;
         gap: 1.2rem;
         transition: all 0.3s ease;
+        overflow-x: scroll;
       }
 
       .nav-links a {
@@ -130,6 +131,13 @@
         text-align: left;
         table-layout: fixed;
         border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      @media only screen and (max-width: 700px) {
+        table {
+          
+          width: 100%;
+        }
       }
     </style>
   </head>
